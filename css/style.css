@@ -69,14 +69,53 @@ body{
     display: none;
 }
 
-.container{
+.container .left-side{
     background-color: aliceblue;
-    display:inline-flex;
+    
 }
 
-.container #allowance div, .container #expenses div{
-    font-size: 20px;
-    background: #A9ACA9; 
+.container .right-side {
+    background-color: #1EE1B6;
+}
+
+.container{
+    display:inline-flex;
+    width: 100%;
+    height: 100%;
+}
+
+#merge {
     display: inline-flex;
 }
 
+.left-side, .right-side{
+    padding: 50px;
+    width: 50%;
+    height: 50%;
+    
+}
+
+.left-side #submit {
+    float: right;
+}
+
+.currency-wrap {
+    position: relative;
+}
+
+.currency{
+    position:absolute;
+    left:8px;
+    top:10px;
+}
+
+.text-currency{
+    padding:10px 20px;
+    border:solid 1px #ccc;
+    border-radius:5px;
+}
+
+.left-side label{
+    padding: 10px;
+    width: 150px;
+}
