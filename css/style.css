@@ -1,3 +1,7 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body{
     background-color :cadetblue;
     margin: 0;
@@ -97,6 +101,7 @@ body{
 
 .left-side #submit {
     float: right;
+    height: 30px;
 }
 
 .currency-wrap {
@@ -117,5 +122,5 @@ body{
 
 .left-side label{
     padding: 10px;
-    width: 150px;
+    width: 160px;
 }
