@@ -99,7 +99,7 @@ body{
     
 }
 
-.left-side #submit {
+.left-side .submit {
     float: right;
     height: 30px;
 }
@@ -125,7 +125,7 @@ body{
     width: 160px;
 }
 
-.right-side .dashboard {
+.dashboard {
     display: inline-flex;
 }
 
@@ -138,4 +138,28 @@ body{
     border-width: 1.5px;
     border-radius: 40px;
 }
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sublist-content {
+    width: 100%;
+    border-left: 0.3em solid #38d827;
+    margin-bottom: 0.6em;
+    padding: 0.5em 1em;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr;
+  }
+
+  .product {
+    font-weight: 500;
+    color: #363d55;
+  }
+  .amount {
+    color: #414a67;
+    margin-left: 20%;
+  }
 
