@@ -35,6 +35,9 @@ submitExpenses.addEventListener("click", () => {
   listCreator(expenseName.value, addExpenses.value);
 
 
+  expenseName.value = "";
+  addExpenses.value = "";
+
 
 });
 
@@ -44,9 +47,34 @@ const listCreator = (_expenseName, _expenseValue) => {
   sublistContent.classList.add("sublist-content","flex-space");
   list.appendChild(sublistContent);
   sublistContent.innerHTML = `<p class="product">${_expenseName}</p><p class="amount">${_expenseValue}</p>`;
+  // create edit button
+  let editButton = document.createElement("button");
+  editButton.classList.add("fa-solid", "fa-pen-to-square", "edit");
+  editButton.style.fontSize = "1.2em";
+  editButton.addEventListener("click", () => {
+    modifyElement(editButton, true);
+  });
+  let deleteButton = document.createElement("button");
+  deleteButton.classList.add("fa-solid", "fa-trash-can", "delete");
+  deleteButton.style.fontSize = "1.2em";
+  deleteButton.addEventListener("click", () => {
+    modifyElement(deleteButton);
+  });
+
+
+
+  sublistContent.appendChild(editButton);
+  sublistContent.appendChild(deleteButton);
 
 };
 
+const modifyElement = (element, edit = false) => {
 
+  let parentDiv = element.parentElement;
+  let currentBalance = balanceValue.innerText;
+  let currentExpense = expenditureValue.innerText;
+  let parentAmount = parentDiv.querySelector(".amount").innerText;
+  
+}
 
 
