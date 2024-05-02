@@ -26,6 +26,12 @@ submitAllowance.addEventListener("click", () => {
 });
 
 submitExpenses.addEventListener("click", () => {
+
+  if (!addExpenses.value || !expenseName.value) {
+    // productTitleError.classList.remove("hide");
+    return false;
+  }
+
   let  amount = parseFloat(addExpenses.value);
   let totalAmount = parseFloat(expensesAmount.innerText) +  amount;
   
@@ -68,13 +74,31 @@ const listCreator = (_expenseName, _expenseValue) => {
 
 };
 
+// Function to modify the list
 const modifyElement = (element, edit = false) => {
 
   let parentDiv = element.parentElement;
-  let currentBalance = balanceValue.innerText;
-  let currentExpense = expenditureValue.innerText;
+  let currentBalance = balanceAmount.innerText;
+  let currentExpense = expensesAmount.innerText;
   let parentAmount = parentDiv.querySelector(".amount").innerText;
+  if (edit) {
+    let parentText = parentDiv.querySelector(".product").innerText;
+    expenseName.value = parentText;
+    addExpenses.value = parentAmount;
+    disableButtons(true);
+  }
+  balanceAmount.innerText = parseInt(currentBalance) + parseInt(parentAmount);
+  expensesAmount.innerText = parseInt(currentExpense) - parseInt(parentAmount);
+  parentDiv.remove();
   
 }
+
+//Function to disable edit and delete button
+const disableButtons = (bool) => {
+  let editButtons = document.getElementsByClassName("edit");
+  Array.from(editButtons).forEach((element) => {
+    element.disabled = bool;
+  });
+};
 
 

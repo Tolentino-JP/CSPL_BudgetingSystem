@@ -170,5 +170,5 @@ body{
 #list {
     height: 260px;
     overflow: scroll;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
