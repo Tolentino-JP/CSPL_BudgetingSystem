@@ -73,12 +73,6 @@ body{
     display: none;
 }
 
-.container {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .container .left-side{
     background-color: #DBA979;
     
@@ -93,6 +87,7 @@ body{
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 #merge {
