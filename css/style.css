@@ -3,8 +3,7 @@
 }
 
 body{
-    background-color :#AFD198;
-    margin: 0;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .navigation{
@@ -74,20 +73,20 @@ body{
 }
 
 .container .left-side{
-    background-color: #DBA979;
+    background-color: #f5f7fa;
     
 }
 
 .container .right-side {
-    background-color: #ECCA9C;
+    background-color: #c3cfe2;
 }
 
 .container{
     display:flex;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    box-shadow: 5px 5px 13px #5d6c81;
 }
 
 #merge {
@@ -99,9 +98,25 @@ body{
 }
 
 .left-side .submit {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #6d7c97;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
     float: right;
-    height: 30px;
+    bottom: 15px;
 }
+
+.left-side .submit:active{
+    background-color: #5d6c81;
+}
+
+
 
 .currency-wrap {
     position: relative;
@@ -128,6 +143,8 @@ body{
     display: inline-flex;
 }
 
+
+
 .right-side .dashboard div {
     margin-left: 5px;
     margin-right: 5px;
@@ -146,7 +163,7 @@ body{
 
 .sublist-content {
     width: 100%;
-    border-left: 0.3em solid #38d827;
+    border-left: 0.3em solid #323a46;
     margin-bottom: 0.6em;
     padding: 0.5em 1em;
     display: grid;
@@ -166,4 +183,7 @@ body{
     height: 260px;
     overflow: scroll;
     overflow-x: hidden;
+    
 }
+
+

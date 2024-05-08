@@ -57,12 +57,16 @@ const listCreator = (_expenseName, _expenseValue) => {
   let editButton = document.createElement("button");
   editButton.classList.add("fa-solid", "fa-pen-to-square", "edit");
   editButton.style.fontSize = "1.2em";
+  editButton.style.border = "none";
+  editButton.style.backgroundColor = "#c3cfe2";
   editButton.addEventListener("click", () => {
     modifyElement(editButton, true);
   });
   let deleteButton = document.createElement("button");
   deleteButton.classList.add("fa-solid", "fa-trash-can", "delete");
   deleteButton.style.fontSize = "1.2em";
+  deleteButton.style.border = "none";
+  deleteButton.style.backgroundColor = "#c3cfe2";
   deleteButton.addEventListener("click", () => {
     modifyElement(deleteButton);
   });
