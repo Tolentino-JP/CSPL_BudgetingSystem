@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSS</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+    <!-- <div class="navigation">
+        <button class="openLogin">Login</button>
+    </div>
+    
+    <div class="login-content hide-login" >
+        <h1>LOGIN</h1> <button class="close-modal">&times;</button> <br><br>
+        <form action="" id="loginForm" method="get">
+            <label for="username" >Username: </label><br>
+            <input type="text" id="username" placeholder="Enter username"><br><br>
+            <label for="password" >Password: </label><br>
+            <input type="password" id="password" placeholder="Enter password"><br><br>
+            <input type="submit" id="submit" value="LOGIN"> 
+
+            <label for="error" id="error" style="Color: red; display: none;" >Error! Incorrect Information.</label>
+        </form>
+    </div> -->
+
+    <div class="blur-bg hide-blur"></div>
+    
+    <div class="container">
+        <div class="left-side">
+            <h1>Allowance</h1>
+            <div id="allowance" >
+                <div id="merge">
+                    <label for="add-allowance">Monthly Allowance: </label>
+                    <div class="currency-wrap">
+                        <span class="currency">₱</span>
+                        <input type="number" placeholder="0" class="text-currency"  id="add-allowance">
+                    </div>
+                </div>
+                <br><br><br>
+                
+                <button id="submit-allowance"  class="submit">Submit</button>
+            </div>
+            <h1>Expenses</h1>
+            <div id="expenses">
+                <div id="merge">
+                    <label for="add-expenses">Expense Name: </label>
+                    <div class="currency-wrap">
+                        <input type="text" placeholder="Expense Name" class="text-currency" id="add-expense-name">
+                    </div>
+                </div>
+                <br>
+                <div id="merge">
+                    <label for="add-expenses">Expense Amount: </label>
+                    <div class="currency-wrap">
+                        <span class="currency">₱</span>
+                        <input type="number" placeholder="0" class="text-currency" id="add-expenses">
+                    </div>
+                </div>
+                <br><br><br>
+                <button type="submit" id="submit-expenses" class="submit">Submit</button>
+            </div>
+        </div> 
+        <!-- end left-side -->
+        <div class="right-side">
+            
+            <div class="dashboard">
+                
+                <div>
+                    <h4>Allowance</h4>
+                    <span id="allowance-amount">0 </span><br><br>
+                </div>
+                <div>
+                    <h4>Total Expenses</h4>
+                    <span id="expenses-amount">0</span>
+                </div>
+                <div>
+                    <h4>Balance</h4>
+                    <span id="balance-amount">0</span>
+                </div>
+            </div>
+            <br><br><br>
+            <h2>Your Expense Breakdown</h2>
+            <div class="allign">
+                <select name="dateMonth" id="dateMonth">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div id="list"></div>
+        </div> 
+        <!-- end right-side-->
+    </div> 
+    <!-- end container-->
+    
+
+
+
+
+
+    <script src="../javascript/login.js"></script>
+    <script src="../javascript/add.js"></script>
+</body>
+</html>
