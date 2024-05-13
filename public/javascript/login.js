@@ -1,17 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const path = require('path');
-const session = require('express-session');
+
 
 
 var establishConnection = require('./database');
 var client = establishConnection();
 
-router.use(session({
-    secret: 'your-secret-key',
-    resave: false,
-    saveUninitialized: true
-}));
 
 
 router.post('/', (req, res) => {
@@ -30,7 +25,8 @@ router.post('/', (req, res) => {
       if ((result.rows.length > 0) && (result.rows[0].username == username) && (result.rows[0].password == password)) {
         // User exists
         // console.log(req.body);
-        req.session.user_id = result.rows[0].user_id;
+        user_id= result.rows[0].user_id;
+        module.exports = {router, user_id};
         res.sendFile(path.join(__dirname, '../html/index.html'));
       }else{
         res.sendFile(path.join(__dirname, '../html/login.html'));
@@ -45,7 +41,7 @@ router.post('/', (req, res) => {
 });
 
 
-module.exports = {router, getUserID: (req) => req.session.user_id };
+module.exports = {router};
 
 
   

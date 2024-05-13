@@ -33,13 +33,13 @@
     <div class="container">
         <div class="left-side">
             <h1>Allowance</h1>
-            <form action="/addTransaction/allowance" method="get">
+            <form action="/addTransaction/allowance" method="post">
                 <div id="allowance" >
                     <div id="merge">
                         <label for="add-allowance">Monthly Allowance: </label>
                         <div class="currency-wrap">
                             <span class="currency">₱</span>
-                            <input type="number" placeholder="0" class="text-currency"  id="add-allowance">
+                            <input type="number" placeholder="0" class="text-currency"  id="add-allowance" name="add-allowance">
                         </div>
                     </div>
                     <br><br><br>
@@ -49,12 +49,12 @@
             </form>
             
             <h1>Expenses</h1>
-            <form action="/addTransaction/expenses" method="get">
+            <form action="/addTransaction/expenses" method="post">
                 <div id="expenses">
                     <div id="merge">
                         <label for="add-expenses">Expense Name: </label>
                         <div class="currency-wrap">
-                            <input type="text" placeholder="Expense Name" class="text-currency" id="add-expense-name">
+                            <input type="text" placeholder="Expense Name" class="text-currency" id="add-expense-name" name="add=expenses">
                         </div>
                     </div>
                     <br>
