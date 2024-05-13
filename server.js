@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+const {router: login} = require('./public/javascript/login');
+const addTransaction = require('./public/javascript/add-transac');
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/html/login.html");
 });
 
 app.use(express.static('public'));
+app.use('/login', login);
+app.use('/addTransaction', addTransaction);
 
 
 app.listen(3000, () => {

@@ -1,50 +1,51 @@
-// Press Login
-
-let loginContent = document.querySelector(".login-content");
-let openLogin = document.querySelector(".openLogin  ");
-let closeModal = document.querySelector(".close-modal");
-let blurBg = document.querySelector(".blur-bg");
-
-openLogin.addEventListener("click", function(){
-    loginContent.classList.remove("hide-login");
-    blurBg.classList.remove("hide-blur");
-});
-
-closeModal.addEventListener( "click" ,function() {
-    loginContent.classList.add("hide-login");
-    blurBg.classList.add("hide-blur");
-});
+const express = require("express");
+const router = express.Router();
+const path = require('path');
+const session = require('express-session');
 
 
+var establishConnection = require('./database');
+var client = establishConnection();
+
+router.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true
+}));
 
 
+router.post('/', (req, res) => {
+  var user_id = 1;
+  const {username, password} = req.body;
 
-
-
-
-
-// enter username and  password
-
-document.getElementById('submit').addEventListener('click', function(event){
-
-        event.preventDefault(); // Prevent the form from submitting
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-
-        login(username, password);
-
-    }
-
-);
-
-function login(username, password){
-
-    if(username == "John" && password == "Tolentino1552"){
-        console.log("Correct Username!");
-        console.log("Correct Password!");   
-    }else{
-        document.getElementById("error").style.display="inline";
-    }
+  var sqlQuery = `SELECT username, password FROM users where username = '${username}' AND password = '${password}'`;
+  
+  client.query(sqlQuery, function(err, result){
     
+    if (err) {
+      return err;
+    } else {
 
-}
+
+      if ((result.rows.length > 0) && (result.rows[0].username == username) && (result.rows[0].password == password)) {
+        // User exists
+        // console.log(req.body);
+        req.session.user_id = result.rows[0].user_id;
+        res.sendFile(path.join(__dirname, '../html/index.html'));
+      }else{
+        res.sendFile(path.join(__dirname, '../html/login.html'));
+      }
+
+    }
+
+
+  });
+
+  
+});
+
+
+module.exports = {router, getUserID: (req) => req.session.user_id };
+
+
+  
