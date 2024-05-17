@@ -10,7 +10,6 @@ var client = establishConnection();
 let myObject = {router: router,user_id: 1, client };
 
 router.post('/', (req, res) => {
-  var user_id = 1;
   const {username, password} = req.body;
 
   var sqlQuery = `SELECT * FROM users where username = '${username}' AND password = '${password}'`;
@@ -26,7 +25,6 @@ router.post('/', (req, res) => {
         // User exists
         // console.log(req.body);
         myObject.user_id= result.rows[0].user_id;
-        module.exports = {router, user_id};
         res.sendFile(path.join(__dirname, '../html/index.html'));
       }else{
         res.sendFile(path.join(__dirname, '../html/login.html'));
