@@ -21,6 +21,7 @@ function GetDate(){
     return formattedDate;
 }
 
+router.use(express.static(path.join(__dirname, '../../../public')));
 
 
 router.post('/allowance', (req, res) => {

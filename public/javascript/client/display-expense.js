@@ -1,7 +1,7 @@
 document.getElementById('dateMonth').addEventListener('change', function() {
     const month = this.value;
-    const listDiv = document.getElementById('list');
-    fetch(`/getTransactions?month=${month}`)
+    const listDiv = document.getElementById('list-expense');
+    fetch(`/getTransactions/expense?month=${month}`)
         .then(response => response.json())
         .then(data => {
             
@@ -12,7 +12,7 @@ document.getElementById('dateMonth').addEventListener('change', function() {
             const thead = document.createElement('thead');
             const tbody = document.createElement('tbody');
 
-            const headers = ['ID', 'Amount', 'Date'];
+            const headers = ['ID', 'Type', 'Amount', 'Date'];
 
             headers.forEach(header => {
                 const th = document.createElement('th');
@@ -30,9 +30,13 @@ document.getElementById('dateMonth').addEventListener('change', function() {
                     // insert id
                     tdId.textContent = transaction.id;
                     tr.appendChild(tdId);
+                    // insert type
+                    const tdType = document.createElement('td');
+                    tdType.textContent = transaction.expense_name;
+                    tr.appendChild(tdType);
                     // insert amount
                     const tdAmount = document.createElement('td');
-                    tdAmount.textContent = transaction.amount;
+                    tdAmount.textContent = transaction.expense_amount;
                     tr.appendChild(tdAmount);
                     // insert date
                     const tdDate = document.createElement('td');

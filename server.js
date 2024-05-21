@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 
 
 app.use(express.static('public'));
+
 app.use('/login', login);
 app.use('/addTransaction', addTransaction);
 app.use('/getTransactions', getTransaction);

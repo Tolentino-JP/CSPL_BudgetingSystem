@@ -7,7 +7,7 @@
     <title>SSS</title>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     
 
 </head>
@@ -54,6 +54,14 @@
                     <button type="submit" id="submit-expenses" class="submit">Submit</button>
                 </div>
             </form>
+            <br><br><br>   
+
+
+            <div class="navbar">
+                <a id="stats">Statistics</a>
+                <a href="html/login.html">Sign-Out</a>
+            </div> 
+            
             
         </div> 
         <!-- end left-side -->
@@ -92,11 +100,48 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div id="list"></div>
+
+            <div class="combine">
+
+                <div class="header">
+                    <h2>Budget</h2>
+                    <h2>Expenses</h2>
+
+                </div>
+
+                <div class="side-by-side">
+                    <div id="list"></div>
+
+                    <div id="list-expense"></div>
+                </div>
+                
+            </div>
+
+            
         </div> 
         <!-- end right-side-->
     </div> 
     <!-- end container-->
+
+    <div class="stats-container hide-stats">
+        <center><h1>STATISTICS</h1></center>
+        <br><br>
+        <div>
+            <p>Mean: </p><p id="mean">0</p>
+        </div>
+
+        <div>
+            <p>Range: </p><p id="min">0</p>
+        </div>
+        
+        <div>
+            <p>Highest expenses: </p><p id="min">0</p>
+        </div>
+        
+        <div>
+            <p>Lowest expenses: </p><p id="min">0</p>
+        </div>
+    </div>
     
 
 
@@ -105,6 +150,7 @@
 
     <script src="../javascript/login.js"></script>
     <script src="../javascript/client/display-transact.js"></script>
+    <script src="../javascript/client/display-expense.js"></script>
     
 </body>
 </html>

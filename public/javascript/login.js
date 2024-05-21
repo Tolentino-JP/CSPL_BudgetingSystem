@@ -9,6 +9,8 @@ var client = establishConnection();
 
 let myObject = {router: router,user_id: 1, client };
 
+router.use(express.static(path.join(__dirname, '../../public')));
+
 router.post('/', (req, res) => {
   const {username, password} = req.body;
 
