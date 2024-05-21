@@ -1,10 +1,19 @@
 * {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
+body {
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh;
 }
+
 
 .navigation{
     overflow: hidden;
@@ -82,10 +91,8 @@ body{
 }
 
 .container{
-    display:flex;
-    position: fixed;
-    top: 20%;
-    left: 20%;
+    display: flex;
+    position: absolute;
     box-shadow: 5px 5px 13px #5d6c81;
 }
 
