@@ -12,8 +12,6 @@
 
 </head>
 <body>
-
-    <div class="blur-bg hide-blur"></div>
     
     <div class="container">
         <div class="left-side">
@@ -123,19 +121,27 @@
     </div> 
     <!-- end container-->
 
+    <!-- stats section -->
+
+    <div class="blur-bg hide-blur"></div>
+
     <div class="stats-container hide-stats">
-        <center><h1>STATISTICS</h1></center>
+        <div class="header-design">
+            <center><h1>STATISTICS</h1></center>
+            <h1 class="close-stats"><i class="fa-solid fa-circle-xmark"></i></h1>
+        
+        </div>
         <br><br>
         <div>
             <p>Mean: </p><p id="mean">0</p>
         </div>
 
         <div>
-            <p>Range: </p><p id="min">0</p>
+            <p>Range: </p><p id="range">0</p>
         </div>
         
         <div>
-            <p>Highest expenses: </p><p id="min">0</p>
+            <p>Highest expenses: </p><p id="max">0</p>
         </div>
         
         <div>
@@ -151,6 +157,8 @@
     <script src="../javascript/login.js"></script>
     <script src="../javascript/client/display-transact.js"></script>
     <script src="../javascript/client/display-expense.js"></script>
+    <script src="../javascript/client/statistics.js"></script>
+
     
 </body>
 </html>

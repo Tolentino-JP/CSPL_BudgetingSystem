@@ -293,3 +293,21 @@ tr:hover {
 .stats-container p{
     font-size: 25px;
 }
+
+.hide-stats{
+    display: none;
+}
+
+.header-design{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.header-design h1{
+    margin: 0;
+}
+
+.close-stats{
+    cursor: pointer;
+}
