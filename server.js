@@ -19,8 +19,8 @@ app.use(express.static('public'));
 
 app.use('/login', login);
 app.use('/addTransaction', addTransaction);
+app.use('/getInfo', balanceGet);
 app.use('/getTransactions', getTransaction);
-app.use('/getTransactions', balanceGet);
 
 
 

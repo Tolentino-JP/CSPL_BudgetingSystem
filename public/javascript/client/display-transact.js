@@ -1,5 +1,18 @@
 document.getElementById('dateMonth').addEventListener('change', function() {
     const month = this.value;
+    Show(month);
+    
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+
+    const month = document.getElementById('dateMonth').value;
+    Show(month);
+
+})
+
+
+function Show(month){
     const listDiv = document.getElementById('list');
     fetch(`/getTransactions?month=${month}`)
         .then(response => response.json())
@@ -36,7 +49,7 @@ document.getElementById('dateMonth').addEventListener('change', function() {
                     tr.appendChild(tdAmount);
                     // insert date
                     const tdDate = document.createElement('td');
-                    const date = new Date(transaction.date);
+                    const date = new Date(transaction.date.split('T')[0]);
                     const formattedDate = date.toISOString().split('T')[0]; // yyyy-mm-dd format
                     tdDate.textContent = formattedDate;
                     tr.appendChild(tdDate);
@@ -52,4 +65,4 @@ document.getElementById('dateMonth').addEventListener('change', function() {
 
         })
         .catch(error => console.error('Error:', error));
-});
+}
