@@ -5,6 +5,8 @@ const path = require('path');
 
 const myObject = require('./login');
 
+router.use(express.static(path.join(__dirname, '../../public')));
+
 function GetDate(){
 
     const currentDate = new Date();

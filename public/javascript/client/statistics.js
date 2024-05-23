@@ -17,9 +17,7 @@ stats.addEventListener('click', function(){
 closeStats.addEventListener('click', function(){
 
     loginContent.classList.add('hide-stats');
-    blurBg.classList.add('hide-blur');  
-
-    
+    blurBg.classList.add('hide-blur');
 
 })
 
@@ -27,7 +25,6 @@ closeStats.addEventListener('click', function(){
 document.addEventListener('DOMContentLoaded', function() {
 
     const month = document.getElementById('dateMonth').value;
-
     GetData(month);
 
 });
@@ -47,7 +44,7 @@ function GetData(month){
         .then(response => response.json())
         .then(data => {
 
-            console.log(data);
+            // console.log(data);
 
             if(data.length > 0){
 
