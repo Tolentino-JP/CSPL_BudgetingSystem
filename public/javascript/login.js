@@ -56,6 +56,15 @@ router.post('/register', (req,res) => {
       res.sendFile(path.join(__dirname, '../html/login.html'));
 
 
+      // if ((result.rows.length > 0) && (result.rows[0].username == username) && (result.rows[0].password == password)) {
+      //   // User exists
+      //   // console.log(req.body);
+      //   myObject.user_id= result.rows[0].user_id;
+      //   res.sendFile(path.join(__dirname, '../html/index.html'));
+      // }else{
+      //   res.sendFile(path.join(__dirname, '../html/login.html'));
+      // }
+
     }
 
 
