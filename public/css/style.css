@@ -98,6 +98,8 @@ body {
 
 #merge {
     display: inline-flex;
+    /* align-items: center;
+    margin-bottom: 15px; */
 }
 
 .left-side, .right-side{
