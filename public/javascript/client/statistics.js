@@ -70,7 +70,8 @@ function GetData(month){
                 
 
                 let average = sum/count;
-                mean.innerHTML = average;
+                
+                mean.innerHTML =  average.toFixed(2);
                 range.innerHTML = maximum - minimum;
                 max.innerHTML = maximum;
                 min.innerHTML = minimum;
