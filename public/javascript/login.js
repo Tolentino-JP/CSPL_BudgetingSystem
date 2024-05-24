@@ -7,9 +7,9 @@ const path = require('path');
 var establishConnection = require('./database');
 var client = establishConnection();
 
-let myObject = {router: router,user_id: 1, client };
+let myObject = {router: router, user_id: 1, client };
 
-router.use(express.static(path.join(__dirname, '../../public')));
+router.use(express.static(path.join(__dirname, '../../public'))); // note
 
 router.post('/', (req, res) => {
   const {username, password} = req.body;
@@ -38,6 +38,29 @@ router.post('/', (req, res) => {
   });
 
   
+});
+
+router.post('/register', (req,res) => {
+
+  const {username, password, 'first-name': first, 'last-name': last} = req.body;
+
+  var sqlQuery = `INSERT INTO users (username, password, first_name, last_name) VALUES (${username}, '${password}', '${first}', '${last}')`;
+  
+  client.query(sqlQuery, function(err, result){
+    
+    if (err) {
+      return err;
+    } else {
+
+      console.log("Register Successfully!");
+      res.sendFile(path.join(__dirname, '../html/login.html'));
+
+
+    }
+
+
+  });
+
 });
 
 

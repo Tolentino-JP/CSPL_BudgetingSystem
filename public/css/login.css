@@ -65,3 +65,15 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
     background-color: #09488c;
 }
+
+.hide-login{
+
+    display: none;
+
+}
+
+.hide-register{
+
+    display: none;
+
+}
